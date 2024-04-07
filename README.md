@@ -12,3 +12,10 @@ Criar um programa :
 Selecionar o package (SE80) e com um clique direito selecinar CREATE -> PROGRAM. Inserir o nome do programa, e clicar em Create.
 Na janela de propriedades, devemos definir o título e o tipo (Programa executável).  
 Clique em Save para salvar as alterações.
+
+
+Atalhos úteis no ambiente ABAP:  
+Ctr+S: Salva as alterações no programa (o programa passa para o estado inativo).  
+Ctr+F2: Verifica a sintaxe do código.  
+Ctr+F3: Ativa o programa, tornando-o executável.  
+F8: Executa o programa.  
