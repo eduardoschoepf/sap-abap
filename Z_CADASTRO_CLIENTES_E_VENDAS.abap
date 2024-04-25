@@ -22,32 +22,32 @@ PARAMETERS: r_cli RADIOBUTTON GROUP rd USER-COMMAND selection_changed DEFAULT 'X
             r_rlt RADIOBUTTON GROUP rd.
 
 SELECTION-SCREEN BEGIN OF BLOCK A WITH FRAME TITLE text-001.
-    PARAMETERS: p_clie1 TYPE char50 MODIF ID cli,
-                p_rg1 TYPE char10 MODIF ID cli,
-                p_cpf1 TYPE char10 MODIF ID cli,
-                p_end1 TYPE char100 MODIF ID cli,
-                p_email1 TYPE char40 MODIF ID cli,
-                p_telef1 TYPE string MODIF ID cli.
+    PARAMETERS: p_cli TYPE char50 MODIF ID cli,
+                p_rgcli TYPE char10 MODIF ID cli,
+                p_cpfcli TYPE char10 MODIF ID cli,
+                p_endcli TYPE char100 MODIF ID cli,
+                p_emlcli TYPE char40 MODIF ID cli,
+                p_telcli TYPE string MODIF ID cli.
   SELECTION-SCREEN END OF BLOCK A.
 
 
 
   SELECTION-SCREEN BEGIN OF BLOCK B WITH FRAME TITLE text-002.
-    PARAMETERS: p_rg2 TYPE char10 MODIF ID vnd,
-                p_cpf2 TYPE char10 MODIF ID vnd,
-                p_end2 TYPE char10 MODIF ID vnd,
-                p_data2 TYPE dats MODIF ID vnd,
-                p_prod2 TYPE char30 MODIF ID vnd,
-                p_valor2 TYPE char12 MODIF ID vnd.
+    PARAMETERS: p_rgvnd TYPE char10 MODIF ID vnd,
+                p_cpfvnd TYPE char10 MODIF ID vnd,
+                p_endvnd TYPE char10 MODIF ID vnd,
+                p_datvnd TYPE dats MODIF ID vnd,
+                p_prdvnd TYPE char30 MODIF ID vnd,
+                p_valvnd TYPE char12 MODIF ID vnd.
   SELECTION-SCREEN END OF BLOCK B.
 
 
 SELECTION-SCREEN BEGIN OF BLOCK C WITH FRAME TITLE text-003.
-    PARAMETERS: p_cod3 TYPE int2 MODIF ID rlt,
-                p_rg3 TYPE char10 MODIF ID rlt,
-                p_cpf3 TYPE char10 MODIF ID rlt,
-                p_data3 TYPE dats MODIF ID rlt,
-                p_prod3 TYPE char30 MODIF ID rlt.
+    PARAMETERS: p_codrlt TYPE int2 MODIF ID rlt,
+                p_rgrlt TYPE char10 MODIF ID rlt,
+                p_cpfrlt TYPE char10 MODIF ID rlt,
+                p_datrlt TYPE dats MODIF ID rlt,
+                p_prdrlt TYPE char30 MODIF ID rlt.
   SELECTION-SCREEN END OF BLOCK C.
 
 AT SELECTION-SCREEN OUTPUT.
@@ -88,7 +88,8 @@ START-OF-SELECTION.
 * Lógica de seleção e exibição de tela
 IF r_cli = 'X'.
   WRITE: / 'Você escolheu "Cadastrar cliente"',
-         / 'Campos específicos: Nome, RG, CPF'.
+         / 'Campos específicos: Nome, RG, CPF',
+         / p_cli, p_rgcli, p_cpfcli, p_endcli, p_emlcli, p_telcli.
 ELSEIF r_vnd = 'X'.
   WRITE: / 'Você escolheu "Cadastrar venda"',
          / 'Campos específicos: RG, CPF, Produto'.
