@@ -48,6 +48,15 @@
 
 # Resumo dos Módulos SAP
 
+## Módulo SD (Sales and Distribution)
+O módulo **Sales and Distribution (SD)** é responsável pela gestão das vendas e distribuição de produtos. As principais funções incluem:
+- **Processamento de Pedidos**: Gerenciar e processar pedidos de clientes.
+- **Gestão de Vendas**: Controlar o ciclo de vendas, desde a oferta até a faturação.
+- **Distribuição e Logística**: Coordenar o envio e a entrega de produtos aos clientes.
+- **Relatórios de Vendas**: Gerar relatórios sobre o desempenho de vendas e análise de mercado.
+
+---
+
 # SAP_ABAP
 
 ABAP (Advanced Business Application Programming) é uma linguagem de programação de alto nível desenvolvida pela empresa de software SAP. É a principal linguagem utilizada no produto mais conhecido desta empresa, o SAP R/3, um software ERP. O ABAP tem uma sintaxe semelhante ao COBOL.
