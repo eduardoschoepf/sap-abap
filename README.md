@@ -14,8 +14,7 @@
 - **2001**: Introdução do SAP NetWeaver, uma plataforma de integração e desenvolvimento que facilita a integração de diferentes sistemas.
 
 ## 2004 - SAP ERP e Business Suite
-- **2004**: Lançamento do SAP ERP (Enterprise Resource Planning), consolidando as soluções em um único pacote.
-- **2005**: Introdução do SAP Business Suite, que inclui SAP ERP, SAP CRM, SAP SRM e SAP PLM.
+- **2004**: Substituição do R/3 pelo SAP ERP Central Component (ECC) 5.0. Lançamento do SAP NetWeaver como plataforma de integração e arquitetura orientada a serviços.
 
 ## 2007 - SAP Business ByDesign
 - **2007**: Lançamento do SAP Business ByDesign, uma solução ERP baseada em nuvem para pequenas e médias empresas.
