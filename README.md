@@ -1,4 +1,4 @@
-# SAP
+<img src="/assets/sap_logo.png" alt="SAP logo" width="100"/>
 
 ## 1972 - Criação do SAP
 - **1972**: Fundação da SAP (Systemanalyse und Programmentwicklung) por cinco ex-funcionários da IBM na Alemanha.
