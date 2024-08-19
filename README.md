@@ -84,7 +84,7 @@ O módulo **Production Planning (PP)** lida com todos os aspectos da produção 
 - **Custos de Produção**: Calcular e controlar os custos associados à fabricação.
 ---
 
-# SAP_ABAP
+# SAP ABAP
 
 ABAP (Advanced Business Application Programming) é uma linguagem de programação de alto nível desenvolvida pela empresa de software SAP. É a principal linguagem utilizada no produto mais conhecido desta empresa, o SAP R/3, um software ERP. O ABAP tem uma sintaxe semelhante ao COBOL.
 
