@@ -130,3 +130,7 @@ Clique em Save para salvar as alterações.
 * --.--.----   --------     -----------------                         *
 *=====================================================================*
 ```
+
+### Dicionário  
+
+**BAPI (Business Application Programming Interface)** é uma interface de programação que permite a integração entre sistemas SAP e outras aplicações externas. As BAPIs são métodos que pertencem a objetos de negócios no SAP e são usados para realizar operações específicas, como criar, ler, atualizar ou deletar dados no sistema SAP.
