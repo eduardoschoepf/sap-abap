@@ -133,4 +133,6 @@ Clique em Save para salvar as alterações.
 
 ### Dicionário  
 
-**BAPI (Business Application Programming Interface)** é uma interface de programação que permite a integração entre sistemas SAP e outras aplicações externas. As BAPIs são métodos que pertencem a objetos de negócios no SAP e são usados para realizar operações específicas, como criar, ler, atualizar ou deletar dados no sistema SAP.
+**BAPI (Business Application Programming Interface)** é uma interface de programação que permite a integração entre sistemas SAP e outras aplicações externas. As BAPIs são métodos que pertencem a objetos de negócios no SAP e são usados para realizar operações específicas, como criar, ler, atualizar ou deletar dados no sistema SAP.  
+
+**BADI (Business Add-In)** é uma técnica de extensão que permite personalizar e adaptar funcionalidades padrão do sistema SAP sem a necessidade de modificar o código-fonte original. As BADIs são parte do conceito de programação orientada a objetos no SAP e são projetadas para ser implementadas de forma independente das atualizações do sistema, o que ajuda a preservar as personalizações durante upgrades.
