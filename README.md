@@ -138,3 +138,5 @@ Clique em Save para salvar as alterações.
 **BADI (Business Add-In)** é uma técnica de extensão que permite personalizar e adaptar funcionalidades padrão do sistema SAP sem a necessidade de modificar o código-fonte original. As BADIs são parte do conceito de programação orientada a objetos no SAP e são projetadas para ser implementadas de forma independente das atualizações do sistema, o que ajuda a preservar as personalizações durante upgrades.
 
 **In-App Extensibility** permite que os usuários ajustem o comportamento e a interface do sistema SAP sem modificar o código-fonte subjacente. Isso significa que as customizações são realizadas em uma camada superior, o que ajuda a garantir que essas alterações sejam preservadas durante atualizações e upgrades do sistema.
+
+**Enhancement Points** são locais pré-definidos no código padrão do SAP onde é possível adicionar customizações sem modificar o código original.
