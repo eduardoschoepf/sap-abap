@@ -140,3 +140,5 @@ Clique em Save para salvar as alterações.
 **In-App Extensibility** permite que os usuários ajustem o comportamento e a interface do sistema SAP sem modificar o código-fonte subjacente. Isso significa que as customizações são realizadas em uma camada superior, o que ajuda a garantir que essas alterações sejam preservadas durante atualizações e upgrades do sistema.
 
 **Enhancement Points** são locais pré-definidos no código padrão do SAP onde é possível adicionar customizações sem modificar o código original.
+
+**BASIS** Business Application Software Integrated Solution.
