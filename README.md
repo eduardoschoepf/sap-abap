@@ -147,4 +147,6 @@ Clique em Save para salvar as alterações.
 **QAS** Quality Assurance  
 **PROD** Production  
 
-**SWPM (Software Provisioning Manager)** é uma ferramenta utilizada pelo consultor BASIS para instalar, desinstalar e realizar outras tarefas de administração e manutenção em sistemas SAP, como a migração e cópia de sistemas. É uma evolução do antigo "SAPInst" e oferece uma interface simplificada e guiada para facilitar essas operações em diferentes ambientes e plataformas SAP.
+**SWPM (Software Provisioning Manager)** é uma ferramenta utilizada pelo consultor BASIS para instalar, desinstalar e realizar outras tarefas de administração e manutenção em sistemas SAP, como a migração e cópia de sistemas. É uma evolução do antigo "SAPInst" e oferece uma interface simplificada e guiada para facilitar essas operações em diferentes ambientes e plataformas SAP.  
+
+**SUM (Software Update Manager)** é uma ferramenta usada para gerenciar e aplicar atualizações, patches, upgrades e conversões em sistemas SAP. Ele é crucial para manter o ambiente SAP atualizado e seguro, permitindo a aplicação de melhorias e correções de forma eficiente, minimizando o tempo de inatividade e o impacto nas operações.
