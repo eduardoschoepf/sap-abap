@@ -142,3 +142,7 @@ Clique em Save para salvar as alterações.
 **Enhancement Points** são locais pré-definidos no código padrão do SAP onde é possível adicionar customizações sem modificar o código original.
 
 **BASIS** Business Application Software Integrated Solution.
+
+**DEV** Development
+**QAS** Quality Assurance
+**PROD** Production
