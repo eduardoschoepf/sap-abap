@@ -154,3 +154,5 @@ Clique em Save para salvar as alterações.
 **PI (Process Integration)** é uma ferramenta de middleware que permite a integração de diferentes sistemas SAP e não-SAP dentro de uma organização.  
 
 **PO (Process Orchestration)** é uma evolução do SAP PI que combina funcionalidades de integração (SAP PI), gestão de processos de negócios (BPM - Business Process Management) e regras de negócios (BRM - Business Rules Management).
+
+**CPI (Cloud Platform Integration)** é a solução de integração baseada na nuvem, parte do SAP Business Technology Platform (BTP).
