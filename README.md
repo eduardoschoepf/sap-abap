@@ -143,6 +143,6 @@ Clique em Save para salvar as alterações.
 
 **BASIS** Business Application Software Integrated Solution.
 
-**DEV** Development
-**QAS** Quality Assurance
-**PROD** Production
+**DEV** Development  
+**QAS** Quality Assurance  
+**PROD** Production  
