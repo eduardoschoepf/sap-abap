@@ -146,3 +146,5 @@ Clique em Save para salvar as alterações.
 **DEV** Development  
 **QAS** Quality Assurance  
 **PROD** Production  
+
+**SWPM (Software Provisioning Manager)** é uma ferramenta utilizada pelo consultor BASIS para instalar, desinstalar e realizar outras tarefas de administração e manutenção em sistemas SAP, como a migração e cópia de sistemas. É uma evolução do antigo "SAPInst" e oferece uma interface simplificada e guiada para facilitar essas operações em diferentes ambientes e plataformas SAP.
