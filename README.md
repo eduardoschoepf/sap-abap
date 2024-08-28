@@ -151,4 +151,6 @@ Clique em Save para salvar as alterações.
 
 **SUM (Software Update Manager)** é uma ferramenta usada para gerenciar e aplicar atualizações, patches, upgrades e conversões em sistemas SAP. Ele é crucial para manter o ambiente SAP atualizado e seguro, permitindo a aplicação de melhorias e correções de forma eficiente, minimizando o tempo de inatividade e o impacto nas operações.
 
-**PI (Process Integration)** é uma ferramenta de middleware que permite a integração de diferentes sistemas SAP e não-SAP dentro de uma organização.
+**PI (Process Integration)** é uma ferramenta de middleware que permite a integração de diferentes sistemas SAP e não-SAP dentro de uma organização.  
+
+**PO (Process Orchestration)** é uma evolução do SAP PI que combina funcionalidades de integração (SAP PI), gestão de processos de negócios (BPM - Business Process Management) e regras de negócios (BRM - Business Rules Management).
