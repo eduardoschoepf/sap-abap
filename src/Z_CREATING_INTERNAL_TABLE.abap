@@ -29,3 +29,9 @@ customers-customer_id = '002'.
 customers-name = 'Cliente B'.
 customers-city = 'Rio de Janeiro'.
 APPEND customers.
+
+LOOP AT customers.
+    WRITE:  / 'ID:', customers-customer_id,
+              'Nome:', customers-name,
+              'Cidade:', customers-city.
+ENDLOOP.
