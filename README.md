@@ -140,3 +140,19 @@ Clique em Save para salvar as alterações.
 **In-App Extensibility** permite que os usuários ajustem o comportamento e a interface do sistema SAP sem modificar o código-fonte subjacente. Isso significa que as customizações são realizadas em uma camada superior, o que ajuda a garantir que essas alterações sejam preservadas durante atualizações e upgrades do sistema.
 
 **Enhancement Points** são locais pré-definidos no código padrão do SAP onde é possível adicionar customizações sem modificar o código original.
+
+**BASIS** Business Application Software Integrated Solution.
+
+**DEV** Development  
+**QAS** Quality Assurance  
+**PROD** Production  
+
+**SWPM (Software Provisioning Manager)** é uma ferramenta utilizada pelo consultor BASIS para instalar, desinstalar e realizar outras tarefas de administração e manutenção em sistemas SAP, como a migração e cópia de sistemas. É uma evolução do antigo "SAPInst" e oferece uma interface simplificada e guiada para facilitar essas operações em diferentes ambientes e plataformas SAP.  
+
+**SUM (Software Update Manager)** é uma ferramenta usada para gerenciar e aplicar atualizações, patches, upgrades e conversões em sistemas SAP. Ele é crucial para manter o ambiente SAP atualizado e seguro, permitindo a aplicação de melhorias e correções de forma eficiente, minimizando o tempo de inatividade e o impacto nas operações.
+
+**PI (Process Integration)** é uma ferramenta de middleware que permite a integração de diferentes sistemas SAP e não-SAP dentro de uma organização.  
+
+**PO (Process Orchestration)** é uma evolução do SAP PI que combina funcionalidades de integração (SAP PI), gestão de processos de negócios (BPM - Business Process Management) e regras de negócios (BRM - Business Rules Management).
+
+**CPI (Cloud Platform Integration)** é a solução de integração baseada na nuvem, parte do SAP Business Technology Platform (BTP).
