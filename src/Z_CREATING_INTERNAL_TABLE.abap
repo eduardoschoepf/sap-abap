@@ -30,6 +30,9 @@ customers-name = 'Cliente B'.
 customers-city = 'Rio de Janeiro'.
 APPEND customers.
 
+WRITE: / 'Relatório de Clientes'.
+ULINE.
+
 LOOP AT customers.
     WRITE:  / 'ID:', customers-customer_id,
               'Nome:', customers-name,
