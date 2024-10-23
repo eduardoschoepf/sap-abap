@@ -21,3 +21,5 @@ DATA: lv_int       TYPE i,                     " Integer
       lv_xstring   TYPE xstring,               " Hexadecimal string
       lv_bool      TYPE abap_bool,             " Boolean
       lv_timestamp TYPE timestamp.             " Timestamp
+     
+CONSTANTS pi TYPE p LENGTH 8 DECIMALS 14 VALUE '3.14159265358979'.
