@@ -22,12 +22,14 @@ CLASS lcl_local_class DEFINITION.
 		METHODS:
 			constructor,
 			register_user 
-				IMPORTING 	iv_username TYPE string
-							iv_password TYPE string
+				IMPORTING 	
+					iv_username TYPE string
+					iv_password TYPE string
 				RETURNING VALUE(rv_success) TYPE abap_bool,
 			validate_login 
-				IMPORTING 	iv_username TYPE string
-							iv_password TYPE string
+				IMPORTING 
+					iv_username TYPE string
+					iv_password TYPE string
 				RETURNING VALUE(rv_valid) TYPE abap_bool.
 
 	PRIVATE SECTION.
@@ -35,7 +37,8 @@ CLASS lcl_local_class DEFINITION.
 		
 		METHODS:
 			encrypt_password 
-				IMPORTING 	iv_password TYPE string
+				IMPORTING 	
+					iv_password TYPE string
 				RETURNING VALUE(rv_encrypted) TYPE string.
 		
 	* PROTECTED SECTION.
@@ -58,12 +61,12 @@ CLASS lcl_local_class IMPLEMENTATION.
 			EXPORTING
 				data           = iv_password
 			IMPORTING
-				hash          = lv_hash
+				hash           = lv_hash
 			EXCEPTIONS
-				unknown_alg   = 1
-				param_error   = 2
+				unknown_alg    = 1
+				param_error    = 2
 				internal_error = 3
-				OTHERS        = 4.
+				OTHERS         = 4.
 
 		rv_encrypted = lv_hash.
 	ENDMETHOD.
@@ -80,8 +83,8 @@ CLASS lcl_local_class IMPLEMENTATION.
 		ENDIF.
 
 		" Registra novo usuário
-		ls_user-username = iv_username.
-		ls_user-password = encrypt_password( iv_password ).
+		ls_user-username   = iv_username.
+		ls_user-password   = encrypt_password( iv_password ).
 		ls_user-last_login = CONV timestamp( sy-datum && sy-uzeit ).
 
 		INSERT ls_user INTO TABLE mt_users.
