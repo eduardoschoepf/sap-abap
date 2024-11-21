@@ -1,6 +1,6 @@
 <img src="/assets/sap_logo.png" alt="SAP logo" width="100"/>
 
-## 1972 - Criação do SAP
+## 1972 - Fundação da SAP
 - **1972**: Fundação da SAP (Systemanalyse und Programmentwicklung) por cinco ex-funcionários da IBM na Alemanha.
 - **1973**: Lançamento do primeiro produto SAP R/1, um sistema de contabilidade.
 - **1979**: Lançamento do SAP R/2, um aplicativo de software mainframe capaz de integrar todas as funções comerciais de uma empresa, incluindo gestão de materiais e planejamento de produção, com processamento em tempo real.
