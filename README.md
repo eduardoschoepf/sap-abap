@@ -143,11 +143,11 @@ DATA: nome TYPE string.
 
 **Declaração de Estruturas:**  
 ```abap
-TYPES: BEGIN OF t_cliente,
+TYPES: BEGIN OF ls_cliente,
          nome TYPE string,
          idade TYPE i,
-       END OF t_cliente.
-DATA: wa_cliente TYPE t_cliente.
+       END OF ls_cliente.
+DATA: it_clie TYPE SORTED TABLE OF ls_cliente WITH UNIQUE KEY nome.
 ```
 
 ### Dicionário  
