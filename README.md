@@ -135,9 +135,19 @@ Clique em Save para salvar as alterações.
 
 ## DATA
 Declara uma variável ou tabela interna. É usado para criar variáveis que armazenam dados temporários no programa.  
+
 **Declaração:**  
 ```abap
 DATA: nome TYPE string.
+```
+
+**Declaração de Estruturas:**  
+```abap
+TYPES: BEGIN OF t_cliente,
+         nome TYPE string,
+         idade TYPE i,
+       END OF t_cliente.
+DATA: wa_cliente TYPE t_cliente.
 ```
 
 ### Dicionário  
