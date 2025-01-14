@@ -146,7 +146,7 @@ DATA: nome TYPE string.
 TYPES: BEGIN OF ls_struc,
          nome TYPE string,
          idade TYPE i,
-       END OF ls_clie.
+       END OF ls_struc.
 DATA: it_stru1 TYPE SORTED TABLE OF ls_struc WITH UNIQUE KEY nome.
 ```
 
