@@ -131,6 +131,15 @@ Clique em Save para salvar as alterações.
 *=====================================================================*
 ```
 
+# ABAP: Comandos de Declaração de Dados
+
+## DATA
+Declara uma variável ou tabela interna. É usado para criar variáveis que armazenam dados temporários no programa.  
+**Declaração:**  
+```abap
+DATA: nome TYPE string.
+```
+
 ### Dicionário  
 
 **BAPI (Business Application Programming Interface)** é uma interface de programação que permite a integração entre sistemas SAP e outras aplicações externas. As BAPIs são métodos que pertencem a objetos de negócios no SAP e são usados para realizar operações específicas, como criar, ler, atualizar ou deletar dados no sistema SAP.  
