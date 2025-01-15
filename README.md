@@ -18,18 +18,10 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 - [ABAP (Advanced Business Application Programming)](linguagem_abap.md)
 - [Criar um package](package.md)
 - [Criar um programa](programa.md)
-- [Atalhos úteis no ambiente ABAP](#atalhos-úteis-no-ambiente-abap)
+- [Atalhos úteis no ambiente ABAP](atalhos_uteis.md)
 - [Modelo de cabeçalho](#modelo-de-cabeçalho)
 
 
-
-
-
-### Atalhos úteis no ambiente ABAP
-**Ctr+S**: Salva as alterações no programa (o programa passa para o estado inativo).  
-**Ctr+F2**: Verifica a sintaxe do código.  
-**Ctr+F3**: Ativa o programa, tornando-o executável.  
-**F8**: Executa o programa.  
 
 ### Modelo de cabeçalho
 ```
