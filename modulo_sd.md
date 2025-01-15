@@ -4,3 +4,5 @@ O módulo **Sales and Distribution (SD)** é responsável pela gestão das venda
 - **Gestão de Vendas**: Controlar o ciclo de vendas, desde a oferta até a faturação.
 - **Distribuição e Logística**: Coordenar o envio e a entrega de produtos aos clientes.
 - **Relatórios de Vendas**: Gerar relatórios sobre o desempenho de vendas e análise de mercado.
+
+[⬅️ Voltar ao Sumário Principal](README.md)
