@@ -42,4 +42,4 @@
 ## 2023 - Avanços Contínuos
 - **2023**: Continuação da evolução das soluções SAP, com melhorias em SAP S/4HANA, SAP BTP, e novos recursos para apoiar a transformação digital e a inovação empresarial.
 
----
+[⬅️ Voltar ao Sumário Principal](README.md)
