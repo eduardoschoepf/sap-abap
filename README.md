@@ -21,40 +21,11 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 - [Atalhos úteis no ambiente ABAP](atalhos_uteis.md)
 - [Modelo de cabeçalho](#modelo-de-cabeçalho)
 
+## Sintaxe ABAP
+- [Modelo de cabeçalho](modelo_cabecalho.md)
+- [Declaração de Dados e Estruturas](declaracao_dados_estruturas.md)
 
 
-### Modelo de cabeçalho
-```
-*=====================================================================*
-* Report......: Z_PROG                                                *
-* Author......: ESCHOEPF                                              *
-* Date........: --.--.---- - --:--                                    *
-*---------------------------------------------------------------------*
-* Description.:                                                       *
-*---------------------------------------------------------------------*
-* Date         Author       Description                               *
-* --.--.----   --------     -----------------                         *
-*=====================================================================*
-```
-
-# ABAP: Comandos de Declaração de Dados
-
-## DATA
-Declara uma variável ou tabela interna. É usado para criar variáveis que armazenam dados temporários no programa.  
-
-**Declaração:**  
-```abap
-DATA: nome TYPE string.
-```
-
-**Declaração de Estruturas:**  
-```abap
-TYPES: BEGIN OF ls_struc,
-         nome TYPE string,
-         idade TYPE i,
-       END OF ls_struc.
-DATA: it_stru1 TYPE SORTED TABLE OF ls_struc WITH UNIQUE KEY nome.
-```
 
 ### Dicionário  
 
