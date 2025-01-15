@@ -17,15 +17,12 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 ## SAP ABAP
 - [ABAP (Advanced Business Application Programming)](linguagem_abap.md)
 - [Criar um package](package.md)
-- [Criar um programa](#criar-um-programa)
+- [Criar um programa](programa.md)
 - [Atalhos úteis no ambiente ABAP](#atalhos-úteis-no-ambiente-abap)
 - [Modelo de cabeçalho](#modelo-de-cabeçalho)
 
 
-### Criar um programa
-Selecionar o package **(transação SE80)** e com um clique direito selecinar **CREATE -> PROGRAM**. Inserir o nome do programa, e clicar em Create.
-Na janela de propriedades, devemos definir o **título** e o **tipo (Programa executável)**.  
-Clique em Save para salvar as alterações.
+
 
 
 ### Atalhos úteis no ambiente ABAP
