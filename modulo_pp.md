@@ -4,3 +4,5 @@ O módulo **Production Planning (PP)** lida com todos os aspectos da produção 
 - **Controle de Produção**: Monitorar o progresso da produção e ajustar conforme necessário.
 - **Gestão de Materiais**: Garantir a disponibilidade de materiais para a produção.
 - **Custos de Produção**: Calcular e controlar os custos associados à fabricação.
+
+[⬅️ Voltar ao Sumário Principal](README.md)
