@@ -4,3 +4,5 @@ O módulo **Materials Management (MM)** abrange todos os aspectos do gerenciamen
 - **Compras**: Gerenciar pedidos de compra, fornecedores e contratos.
 - **Recebimento e Armazenagem**: Processar a entrada de materiais e seu armazenamento.
 - **Avaliação de Fornecedores**: Avaliar o desempenho dos fornecedores e a qualidade dos materiais.
+
+[⬅️ Voltar ao Sumário Principal](README.md)
