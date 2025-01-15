@@ -1,6 +1,5 @@
 <img src="/assets/sap_logo.png" alt="SAP logo" width="100"/>  
 
-# Guia SAP
 Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP. Use os links abaixo para explorar cada seção:
 
 ## Histórico da SAP
