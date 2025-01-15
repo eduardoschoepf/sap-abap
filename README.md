@@ -24,10 +24,9 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 ## Sintaxe ABAP
 - [Modelo de cabeçalho](modelo_cabecalho.md)
 - [Declaração de Dados e Estruturas](declaracao_dados_estruturas.md)
+- [Binary search](binary_search.md)
 
-
-
-### Dicionário  
+## Dicionário  
 
 **BAPI (Business Application Programming Interface)** é uma interface de programação que permite a integração entre sistemas SAP e outras aplicações externas. As BAPIs são métodos que pertencem a objetos de negócios no SAP e são usados para realizar operações específicas, como criar, ler, atualizar ou deletar dados no sistema SAP.  
 
