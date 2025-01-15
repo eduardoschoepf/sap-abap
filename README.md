@@ -14,26 +14,13 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 
 ---
 
-# SAP ABAP
+## SAP ABAP
+- [ABAP (Advanced Business Application Programming)](linguagem_abap.md)
+- [Criar um package](package.md)
+- [Criar um programa](#criar-um-programa)
+- [Atalhos úteis no ambiente ABAP](#atalhos-úteis-no-ambiente-abap)
+- [Modelo de cabeçalho](#modelo-de-cabeçalho)
 
-ABAP (Advanced Business Application Programming) é uma linguagem de programação de alto nível desenvolvida pela empresa de software SAP. É a principal linguagem utilizada no produto mais conhecido desta empresa, o SAP R/3, um software ERP. O ABAP tem uma sintaxe semelhante ao COBOL.
-
-## Formação ABAP
-
-1. [Package](#package)
-2. [Criar um package](#criar-um-package)
-3. [Criar um programa](#criar-um-programa)
-4. [Atalhos úteis no ambiente ABAP](#atalhos-úteis-no-ambiente-abap)
-5. [Modelo de cabeçalho](#modelo-de-cabeçalho)
-
-### Package
-Um PACKAGE é uma estrutura hierárquica usada para agrupar e organizar diferentes objetos. E possivel definir uma estrutura lógica para os programas e classes ABAP.  
-
-### Criar um package
-Acessar o ambiente de desenvolvimento SAPGUI **(transação SE80)** e abrir o editor de gerenciamento de packages **(transação SE21)**. Clicar em "Create" para criar um novo package.
-Nomear o package usando uma convenção de nomenclatura clara, consistente e que respeite as convenções do cliente.  
-Definir a visibilidade do package: público, privado ou protegido.  
-Depois que o pacote for criado, podemos usá-lo para organizar objetos de desenvolvimento, como programas, classes, funções etc.
 
 ### Criar um programa
 Selecionar o package **(transação SE80)** e com um clique direito selecinar **CREATE -> PROGRAM**. Inserir o nome do programa, e clicar em Create.
