@@ -38,6 +38,18 @@ Para que o **BINARY SEARCH** funcione corretamente, é preciso atender a dois pr
 Abaixo está um exemplo de como usar o comando **READ TABLE com BINARY SEARCH** no SAP ABAP:
 
 ```abap
+*=====================================================================*
+* Report......: Z_PROG_BINARY_SEARCH                                  *
+* Author......: ESCHOEPF                                              *
+* Date........: 16.01.2025 - 22:00                                    *
+*---------------------------------------------------------------------*
+* Description.: Buscas em tabelas com BINARY SEARCH                   *
+*---------------------------------------------------------------------*
+* Date         Author       Description                               *
+* --.--.----   --------     -----------------                         *
+*=====================================================================*
+REPORT Z_PROG_BINARY_SEARCH.
+
 " Declarar uma tabela interna e um work area
 DATA: it_materiais TYPE TABLE OF mara,
       wa_material TYPE mara.
