@@ -86,9 +86,12 @@ ENDIF.
 
 ## **Explicação do Código**
 A tabela interna **it_materiais** é ordenada pelo campo **matnr** (código do material) com o comando **SORT**.
-O comando **READ TABLE** procura um registro com o valor '0001234567' no campo **matnr**.
+O comando **READ TABLE** procura um registro com o valor '000000000000000050' no campo **matnr**.
 A opção **BINARY SEARCH** é utilizada para otimizar a busca.
 O sistema verifica a variável **sy-subrc** para identificar se o registro foi encontrado.
+
+## **Diferença para a Busca Linear**
+Na busca linear, cada elemento é analisado um a um, o que pode ser ineficiente em listas grandes. Já na busca binária, o número de elementos analisados diminui exponencialmente. Em uma lista com 1.000 elementos, a busca linear pode realizar até 1.000 comparações, enquanto a busca binária realizará, no máximo, 10 (log₂(1000) ≈ 10).
 
 ---
 ## **Conclusão**
