@@ -50,17 +50,30 @@ Abaixo está um exemplo de como usar o comando **READ TABLE com BINARY SEARCH** 
 *=====================================================================*
 REPORT Z_PROG_BINARY_SEARCH.
 
-" Declarar uma tabela interna e um work area
-DATA: it_materiais TYPE TABLE OF mara,
-      wa_material TYPE mara.
+" Declarar uma tabela interna e um work area, ambos de tipo mara
+DATA: it_materiais TYPE TABLE OF mara,  " Tabela interna compatível com mara
+      wa_material TYPE mara.            " Work area compatível com mara
 
-" Ordenar a tabela interna
+" Preencher a tabela interna com até 1000 registros da tabela MARA
+SELECT * 
+  FROM mara
+  UP TO 1000 ROWS.
+  INTO TABLE it_materiais
+  WHERE matnr IS NOT NULL.
+
+" Verificar se a tabela interna foi preenchida corretamente
+IF sy-subrc <> 0.
+  WRITE: / 'Nenhum material encontrado na tabela MARA'.
+  EXIT.
+ENDIF.
+
+" Ordenar a tabela interna pela chave matnr
 SORT it_materiais BY matnr.
 
 " Procurar um registro específico com BINARY SEARCH
-READ TABLE it_materiais 
-    WITH KEY matnr = '0001234567' 
-    INTO wa_material 
+READ TABLE it_materiais
+    WITH KEY matnr = '000000000000000050'
+    INTO wa_material
     BINARY SEARCH.
 
 " Verificar o resultado da busca
