@@ -93,6 +93,102 @@ O sistema verifica a variável **sy-subrc** para identificar se o registro foi e
 ## **Diferença para a Busca Linear**
 Na busca linear, cada elemento é analisado um a um, o que pode ser ineficiente em listas grandes. Já na busca binária, o número de elementos analisados diminui exponencialmente. Em uma lista com 1.000 elementos, a busca linear pode realizar até 1.000 comparações, enquanto a busca binária realizará, no máximo, 10 (log₂(1000) ≈ 10).
 
+```abap
+*=====================================================================*
+* Report......: Z_PROG_BINARY_SEARCH_VS_LINE_EXISTS                   *
+* Author......: ESCHOEPF                                              *
+* Date........: 18.01.2025 - 22:00                                    *
+*---------------------------------------------------------------------*
+* Description.: Buscas em tabelas com BINARY SEARCH                   *
+*---------------------------------------------------------------------*
+* Date         Author       Description                               *
+* --.--.----   --------     -----------------                         *
+*=====================================================================*
+REPORT Z_PROG_BINARY_SEARCH_VS_LINE_EXISTS.
+
+" Declarar uma tabela interna e um work area, ambos de tipo mara
+DATA: it_materiais TYPE TABLE OF mara,  " Tabela interna compatível com mara
+      wa_material TYPE mara,            " Work area compatível com mara
+      lv_start_time TYPE timestamp,    " Variável para armazenar o tempo inicial
+      lv_end_time TYPE timestamp,      " Variável para armazenar o tempo final
+      lv_duration TYPE i,              " Variável para armazenar a duração
+      lv_line_exists_duration TYPE i.  " Duração do line_exists
+
+" Preencher a tabela interna com até 3000 registros da tabela MARA
+SELECT *
+  FROM mara
+  UP TO 3000 ROWS
+  INTO TABLE it_materiais
+  WHERE matnr IS NOT NULL.
+
+" Verificar se a tabela interna foi preenchida corretamente
+IF sy-subrc <> 0.
+  WRITE: / 'Nenhum material encontrado na tabela MARA'.
+  EXIT.
+ENDIF.
+
+" Ordenar a tabela interna pela chave matnr
+SORT it_materiais BY matnr.
+
+" --- BINARY SEARCH ---
+" Capturar o tempo de início para BINARY SEARCH
+GET TIME STAMP FIELD lv_start_time.
+
+" Procurar um registro específico com BINARY SEARCH
+READ TABLE it_materiais
+    WITH KEY matnr = '000000000000002590'
+    INTO wa_material
+    BINARY SEARCH.
+
+" Capturar o tempo de fim para BINARY SEARCH
+GET TIME STAMP FIELD lv_end_time.
+
+" Calcular a diferença de tempo em microsegundos para BINARY SEARCH
+lv_duration = lv_end_time - lv_start_time.
+
+" Verificar o resultado da busca com BINARY SEARCH
+IF sy-subrc = 0.
+    WRITE: / 'Material encontrado (BINARY SEARCH):', wa_material-matnr.
+ELSE.
+    WRITE: / 'Material não encontrado (BINARY SEARCH).'.
+ENDIF.
+
+" Exibir a duração da busca em microsegundos para BINARY SEARCH
+WRITE: / 'Duração da busca BINARY SEARCH (microsegundos): ', lv_duration.
+
+" Limpar variáveis antes de reutilizá-las
+CLEAR: lv_start_time, lv_end_time.
+
+" --- LINE_EXISTS ---
+" Capturar o tempo de início para LINE_EXISTS
+GET TIME STAMP FIELD lv_start_time.
+
+" Verificar se o registro existe com LINE_EXISTS
+IF line_exists( it_materiais[ matnr = '000000000000002590' ] ).
+  " Procurar o registro utilizando LINE_EXISTS
+  READ TABLE it_materiais WITH KEY matnr = '000000000000002590' INTO wa_material.
+
+  " Verificar o resultado da busca com LINE_EXISTS
+  WRITE: / 'Material encontrado (LINE_EXISTS):', wa_material-matnr.
+ELSE.
+  WRITE: / 'Material não encontrado (LINE_EXISTS).'.
+ENDIF.
+
+" Capturar o tempo de fim para LINE_EXISTS
+GET TIME STAMP FIELD lv_end_time.
+
+" Calcular a diferença de tempo em microsegundos para LINE_EXISTS
+lv_line_exists_duration = lv_end_time - lv_start_time.
+
+" Exibir a duração da busca em microsegundos para LINE_EXISTS
+WRITE: / 'Duração da busca LINE_EXISTS (microsegundos): ', lv_line_exists_duration.
+
+" Comparação de duração
+WRITE: / 'Comparação de Duração:'.
+WRITE: / 'Duração BINARY SEARCH: ', lv_duration, 'microsegundos'.
+WRITE: / 'Duração LINE EXISTS: ', lv_line_exists_duration, 'microsegundos'.
+```
+
 ---
 ## **Conclusão**
 O uso do **READ TABLE** com **BINARY SEARCH** é uma prática recomendada para otimizar programas ABAP que lidam com grandes volumes de dados.
