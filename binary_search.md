@@ -121,29 +121,31 @@ Na busca linear, cada elemento é analisado um a um, o que pode ser ineficiente 
 
 ```abap
 *=====================================================================*
-* Report......: Z_PROG_BINARY_SEARCH_VS_LINE_EXISTS                   *
+* Report......: Z_PROG_BINARY_SEARCH_PERFORM                          *
 * Author......: ESCHOEPF                                              *
 * Date........: 18.01.2025 - 22:00                                    *
 *---------------------------------------------------------------------*
 * Description.: Buscas em tabelas com BINARY SEARCH                   *
 *---------------------------------------------------------------------*
 * Date         Author       Description                               *
-* --.--.----   --------     -----------------                         *
+* 19.01.2025   ESCHOEPF     Implementação do exemplo                  *
 *=====================================================================*
-REPORT Z_PROG_BINARY_SEARCH_VS_LINE_EXISTS.
+REPORT Z_PROG_BINARY_SEARCH_PERFORM.
 
-" Declarar uma tabela interna e um work area, ambos de tipo mara
-DATA: it_materiais TYPE TABLE OF mara,  " Tabela interna compatível com mara
-      wa_material TYPE mara,            " Work area compatível com mara
-      lv_start_time TYPE timestamp,    " Variável para armazenar o tempo inicial
-      lv_end_time TYPE timestamp,      " Variável para armazenar o tempo final
-      lv_duration TYPE i,              " Variável para armazenar a duração
-      lv_line_exists_duration TYPE i.  " Duração do line_exists
+DATA: it_materiais TYPE SORTED TABLE OF mara " Tabela interna compatível com mara ordenada pela chave matnr
+                   WITH UNIQUE KEY matnr,
+      wa_material TYPE mara,                 " Work area compatível com mara
+      lv_start_time TYPE timestamp,          " Tempo inicial
+      lv_end_time TYPE timestamp,            " Tempo final
+      lv_duration TYPE i,                    " Duração (em microsegundos)
+      lv_line_exists_duration TYPE i,        " Duração do LINE_EXISTS
+      lv_line_index_duration TYPE i,         " Duração do LINE_INDEX
+      lv_index TYPE sy-tabix.                " Índice retornado pelo LINE_INDEX
 
-" Preencher a tabela interna com até 3000 registros da tabela MARA
+" Preencher a tabela interna com até 1000 registros da tabela MARA
 SELECT *
   FROM mara
-  UP TO 3000 ROWS
+  UP TO 1000 ROWS
   INTO TABLE it_materiais
   WHERE matnr IS NOT NULL.
 
@@ -153,8 +155,50 @@ IF sy-subrc <> 0.
   EXIT.
 ENDIF.
 
-" Ordenar a tabela interna pela chave matnr
-SORT it_materiais BY matnr.
+" --- LINE_EXISTS ---
+" Capturar o tempo de início para LINE_EXISTS
+GET TIME STAMP FIELD lv_start_time.
+
+" Verificar se o registro existe com LINE_EXISTS
+IF line_exists( it_materiais[ matnr = '000000000000000023' ] ).
+  READ TABLE it_materiais WITH KEY matnr = '000000000000000023' INTO wa_material.
+  WRITE: / 'Material encontrado (LINE_EXISTS):', wa_material-matnr.
+ELSE.
+  WRITE: / 'Material não encontrado (LINE_EXISTS).'.
+ENDIF.
+
+" Capturar o tempo de fim para LINE_EXISTS
+GET TIME STAMP FIELD lv_end_time.
+
+" Calcular a duração da busca em microsegundos para LINE_EXISTS
+lv_line_exists_duration = lv_end_time - lv_start_time.
+
+" Exibir a duração da busca em microsegundos para LINE_EXISTS
+WRITE: / 'Duração da busca LINE_EXISTS (microsegundos): ', lv_line_exists_duration.
+
+" --- LINE_INDEX ---
+" Capturar o tempo de início para LINE_INDEX
+GET TIME STAMP FIELD lv_start_time.
+
+" Determinar o índice do registro com LINE_INDEX
+lv_index = line_index( it_materiais[ matnr = '000000000000000023' ] ).
+
+" Capturar o tempo de fim para LINE_INDEX
+GET TIME STAMP FIELD lv_end_time.
+
+" Calcular a duração da busca em microsegundos para LINE_INDEX
+lv_line_index_duration = lv_end_time - lv_start_time.
+
+" Verificar o resultado da busca com LINE_INDEX
+IF lv_index > 0.
+  READ TABLE it_materiais INDEX lv_index INTO wa_material.
+  WRITE: / 'Material encontrado (LINE_INDEX):', wa_material-matnr.
+ELSE.
+  WRITE: / 'Material não encontrado (LINE_INDEX).'.
+ENDIF.
+
+" Exibir a duração da busca em microsegundos para LINE_INDEX
+WRITE: / 'Duração da busca LINE_INDEX (microsegundos): ', lv_line_index_duration.
 
 " --- BINARY SEARCH ---
 " Capturar o tempo de início para BINARY SEARCH
@@ -162,14 +206,14 @@ GET TIME STAMP FIELD lv_start_time.
 
 " Procurar um registro específico com BINARY SEARCH
 READ TABLE it_materiais
-    WITH KEY matnr = '000000000000002590'
+    WITH KEY matnr = '000000000000000023'
     INTO wa_material
     BINARY SEARCH.
 
 " Capturar o tempo de fim para BINARY SEARCH
 GET TIME STAMP FIELD lv_end_time.
 
-" Calcular a diferença de tempo em microsegundos para BINARY SEARCH
+" Calcular a duração da busca em microsegundos para BINARY SEARCH
 lv_duration = lv_end_time - lv_start_time.
 
 " Verificar o resultado da busca com BINARY SEARCH
@@ -182,37 +226,11 @@ ENDIF.
 " Exibir a duração da busca em microsegundos para BINARY SEARCH
 WRITE: / 'Duração da busca BINARY SEARCH (microsegundos): ', lv_duration.
 
-" Limpar variáveis antes de reutilizá-las
-CLEAR: lv_start_time, lv_end_time.
-
-" --- LINE_EXISTS ---
-" Capturar o tempo de início para LINE_EXISTS
-GET TIME STAMP FIELD lv_start_time.
-
-" Verificar se o registro existe com LINE_EXISTS
-IF line_exists( it_materiais[ matnr = '000000000000002590' ] ).
-  " Procurar o registro utilizando LINE_EXISTS
-  READ TABLE it_materiais WITH KEY matnr = '000000000000002590' INTO wa_material.
-
-  " Verificar o resultado da busca com LINE_EXISTS
-  WRITE: / 'Material encontrado (LINE_EXISTS):', wa_material-matnr.
-ELSE.
-  WRITE: / 'Material não encontrado (LINE_EXISTS).'.
-ENDIF.
-
-" Capturar o tempo de fim para LINE_EXISTS
-GET TIME STAMP FIELD lv_end_time.
-
-" Calcular a diferença de tempo em microsegundos para LINE_EXISTS
-lv_line_exists_duration = lv_end_time - lv_start_time.
-
-" Exibir a duração da busca em microsegundos para LINE_EXISTS
-WRITE: / 'Duração da busca LINE_EXISTS (microsegundos): ', lv_line_exists_duration.
-
 " Comparação de duração
 WRITE: / 'Comparação de Duração:'.
 WRITE: / 'Duração BINARY SEARCH: ', lv_duration, 'microsegundos'.
-WRITE: / 'Duração LINE EXISTS: ', lv_line_exists_duration, 'microsegundos'.
+WRITE: / 'Duração LINE_EXISTS: ', lv_line_exists_duration, 'microsegundos'.
+WRITE: / 'Duração LINE_INDEX: ', lv_line_index_duration, 'microsegundos'.
 ```
 
 ---
