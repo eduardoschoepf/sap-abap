@@ -46,42 +46,68 @@ Abaixo está um exemplo de como usar o comando **READ TABLE com BINARY SEARCH** 
 * Description.: Buscas em tabelas com BINARY SEARCH                   *
 *---------------------------------------------------------------------*
 * Date         Author       Description                               *
-* --.--.----   --------     -----------------                         *
+* 19.01.2025   ESCHOEPF     Implementação do exemplo                  *
 *=====================================================================*
 REPORT Z_PROG_BINARY_SEARCH.
 
-" Declarar uma tabela interna e um work area, ambos de tipo mara
-DATA: it_materiais TYPE TABLE OF mara,  " Tabela interna compatível com mara
-      wa_material TYPE mara.            " Work area compatível com mara
+" --- Declaração de dados ---
+" Opção 1: Tabela interna do tipo padrão (Standard Table), será necessário ordenar manualmente.
+DATA: it_materiais TYPE TABLE OF mara,    " Tabela interna padrão compatível com mara
+      wa_material TYPE mara.              " Work area compatível com mara
 
-" Preencher a tabela interna com até 1000 registros da tabela MARA
-SELECT * 
+" Opção 2: Tabela interna ordenada automaticamente (SORTED TABLE).
+" Comentada aqui como uma alternativa que elimina a necessidade de um comando SORT manual.
+" DATA: it_materiais TYPE SORTED TABLE OF mara
+"                    WITH UNIQUE KEY matnr.
+
+" --- Preenchendo a tabela interna ---
+" Opção 1: SELECT sem ordenação explícita (necessário ordenar manualmente após o SELECT).
+" Neste exemplo, a busca é limitada a 1000 registros apenas para fins de demonstração.
+SELECT *
   FROM mara
-  UP TO 1000 ROWS.
+  UP TO 1000 ROWS
   INTO TABLE it_materiais
   WHERE matnr IS NOT NULL.
 
-" Verificar se a tabela interna foi preenchida corretamente
+" Opção 2: SELECT com ordenação explícita no banco de dados (dispensa o comando SORT).
+" Comentada aqui como uma alternativa ao SORT manual.
+" SELECT *
+"   FROM mara
+"   UP TO 1000 ROWS
+"   INTO TABLE it_materiais
+"   WHERE matnr IS NOT NULL
+"   ORDER BY matnr ASCENDING.
+
+" --- Verificar o preenchimento da tabela ---
 IF sy-subrc <> 0.
-  WRITE: / 'Nenhum material encontrado na tabela MARA'.
-  EXIT.
+  WRITE: / 'Nenhum material encontrado na tabela MARA.'.
+  EXIT. " Finaliza o programa caso não haja registros.
 ENDIF.
 
-" Ordenar a tabela interna pela chave matnr
+" --- Ordenação da tabela interna ---
+" Caso tenha utilizado a Opção 1 (Standard Table e SELECT sem ORDER BY),
+" será necessário ordenar manualmente a tabela interna antes de realizar a busca binária.
 SORT it_materiais BY matnr.
 
-" Procurar um registro específico com BINARY SEARCH
+" --- Busca otimizada com BINARY SEARCH ---
+" Procurar um registro específico (exemplo: material '000000000000000023').
 READ TABLE it_materiais
-    WITH KEY matnr = '000000000000000050'
-    INTO wa_material
-    BINARY SEARCH.
+    WITH KEY matnr = '000000000000000023' " Chave de busca
+    INTO wa_material                      " Armazena o registro encontrado
+    BINARY SEARCH.                        " Usa a pesquisa binária para otimizar a busca
 
-" Verificar o resultado da busca
+" --- Verificar o resultado da busca ---
 IF sy-subrc = 0.
-    WRITE: / 'Material encontrado:', wa_material-matnr.
+    WRITE: / 'Material encontrado (BINARY SEARCH):', wa_material-matnr.
 ELSE.
-    WRITE: / 'Material não encontrado.'.
+    WRITE: / 'Material não encontrado (BINARY SEARCH).'.
 ENDIF.
+
+" --- Comentários adicionais ---
+" 1. Caso tenha utilizado uma SORTED TABLE na declaração, o comando SORT é desnecessário,
+"    pois a tabela interna já estará automaticamente ordenada pelo campo matnr.
+" 2. Caso o SELECT tenha sido feito com ORDER BY matnr ASCENDING, o comando SORT também pode ser omitido.
+" 3. Este exemplo mantém o SORT para fins didáticos, mostrando como garantir que a tabela esteja ordenada.
 ```
 
 ## **Explicação do Código**
