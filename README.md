@@ -18,6 +18,7 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 - [ABAP (Advanced Business Application Programming)](linguagem_abap.md)
 - [Criar um package](package.md)
 - [Criar um programa](programa.md)
+- [Criar uma Classe](classe.md)
 - [Atalhos úteis no ambiente ABAP](atalhos_uteis.md)
 - [Modelo de cabeçalho](#modelo-de-cabeçalho)
 
