@@ -2,6 +2,106 @@
 Ao definir uma classe, você define um plano para um tipo de dados. Na verdade, isso não define nenhum dado, mas define o que significa o nome da classe, em que consistirá um objeto na classe e quais operações podem ser executadas em tal objeto. 
 Ou seja, ele define as características abstratas de um objeto, como atributos, campos e propriedades.
 
+# Passo a Passo: Criar uma Classe em ABAP com Transação
+
+Este guia explica como criar uma classe em ABAP e criar uma transação para acessá-la.
+
+---
+
+## 1. Criar a Classe no **ABAP Workbench**
+### Etapa 1: Acessar o SE24
+1. Abra a transação **SE24** (Class Builder).
+2. Insira o nome da classe, por exemplo: `ZCL_CONVERSOR_CAMBIO`.
+3. Clique em **Create**.
+
+### Etapa 2: Definir a Classe
+1. Na aba **Properties**:
+   - Defina a classe como **Public**.
+   - Marque **Instanciável**.
+2. Deixe a aba **Interfaces** em branco (opcional para este exemplo).
+
+### Etapa 3: Criar Atributos e Métodos
+1. **Atributos**:
+   - Adicione atributos para armazenar informações como nome e valor da moeda.
+   - Exemplo:  
+     | Atributo        | Visibilidade | Tipo        | Descrição                      |
+     |------------------|--------------|-------------|--------------------------------|
+     | `NAME`           | Private      | `STRING`    | Nome da moeda (ex.: EUR, BRL)  |
+     | `VALUE_TO_USD`   | Private      | `DEC (4,4)` | Valor da moeda em relação ao USD |
+
+2. **Métodos**:
+   - Adicione os seguintes métodos:  
+     - `CONSTRUCTOR`: Inicializar a moeda.
+     - `CONVERT`: Realizar a conversão entre moedas.
+     - `GET_NAME`: Retornar o nome da moeda.
+     - `GET_VALUE_TO_USD`: Retornar o valor da moeda em relação ao dólar.
+
+### Etapa 4: Implementar os Métodos
+1. Clique no método na aba **Methods** e escolha **Method Source Code**.
+2. Insira o código. Por exemplo, no método `CONVERT`:
+   ```abap
+   METHOD CONVERT.
+     DATA(lv_rate) TYPE p DECIMALS 6.
+     lv_rate = io_target_currency->get_value_to_usd( ) / value_to_usd.
+     rv_converted_amount = iv_amount * lv_rate.
+   ENDMETHOD.
+   ```
+3. Para o método `CONSTRUCTOR`:
+   ```abap
+   METHOD CONSTRUCTOR.
+     name = iv_name.
+     value_to_usd = iv_value_to_usd.
+   ENDMETHOD.
+   ```
+4. Salve e ative a classe.
+
+---
+
+## 2. Criar o Programa Principal
+### Etapa 1: Acessar o SE38
+1. Abra a transação **SE38** (ABAP Editor).
+2. Insira o nome do programa, por exemplo: `ZPRG_CONVERSOR_CAMBIO`.
+3. Clique em **Create**.
+4. Escolha o tipo **Executable Program**.
+
+### Etapa 2: Escrever o Programa
+1. Declare as moedas usando a classe criada:
+   ```abap
+   DATA: lo_eur TYPE REF TO zcl_conversor_cambio,
+         lo_brl TYPE REF TO zcl_conversor_cambio.
+   lo_eur = NEW zcl_conversor_cambio( iv_name = 'EUR' iv_value_to_usd = '1.10' ).
+   lo_brl = NEW zcl_conversor_cambio( iv_name = 'BRL' iv_value_to_usd = '0.18' ).
+   ```
+2. Realize conversões e exiba os resultados:
+   ```abap
+   DATA(lv_result) TYPE p DECIMALS 2.
+   lv_result = lo_eur->convert( iv_amount = 100 io_target_currency = lo_brl ).
+   WRITE: / 'EUR -> BRL:', 100, '=>', lv_result.
+   ```
+3. Salve e ative o programa.
+
+---
+
+## 3. Criar uma Transação para o Programa
+### Etapa 1: Acessar o SE93
+1. Abra a transação **SE93** (Transaction Code Maintenance).
+2. Insira o código da transação, por exemplo: `ZTRANS_CONVERSOR`.
+3. Clique em **Create**.
+
+### Etapa 2: Configurar a Transação
+1. Escolha o tipo **Executable Program**.
+2. Insira o nome do programa criado (`ZPRG_CONVERSOR_CAMBIO`) no campo **Program**.
+3. Adicione uma descrição, como **"Conversor de Moedas"**.
+4. Salve e ative.
+
+---
+
+## 4. Resultado Final
+Ao executar a transação **ZTRANS_CONVERSOR**, o programa principal será chamado, utilizando a classe para realizar conversões entre moedas, como no exemplo:
+
+- **Entrada**: EUR -> BRL (100 Euros).
+- **Saída**: Mostra o resultado da conversão para Reais.  
+
 Exemplo:
 ```abap
 CLASS lcl_currency DEFINITION.                                               " Define a classe que representará cada moeda
