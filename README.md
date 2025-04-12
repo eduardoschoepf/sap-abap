@@ -16,6 +16,7 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 
 ## SAP ABAP
 - [ABAP (Advanced Business Application Programming)](linguagem_abap.md)
+- [Gerenciar Requests no SAP GUI](gerenciar_gequests_sap_gui.md)
 - [Criar um package](package.md)
 - [Criar um programa](programa.md)
 - [Criar uma Classe](classe.md)
