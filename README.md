@@ -53,3 +53,5 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 **PO (Process Orchestration)** é uma evolução do SAP PI que combina funcionalidades de integração (SAP PI), gestão de processos de negócios (BPM - Business Process Management) e regras de negócios (BRM - Business Rules Management).
 
 **CPI (Cloud Platform Integration)** é a solução de integração baseada na nuvem, parte do SAP Business Technology Platform (BTP).
+
+**SAP BTP** o SAP Business Technology Platform (BTP) é a base de inovação da SAP na nuvem. Ele reúne ferramentas de integração, análise de dados, desenvolvimento de aplicações e automação em um único ambiente. Com o BTP, empresas podem estender soluções SAP (como o S/4HANA), conectar sistemas diversos e transformar dados em insights acionáveis com rapidez e segurança.
