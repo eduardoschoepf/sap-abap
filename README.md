@@ -55,3 +55,5 @@ Este guia abrange a história, evolução, módulos, conceitos e ferramentas SAP
 **CPI (Cloud Platform Integration)** é a solução de integração baseada na nuvem, parte do SAP Business Technology Platform (BTP).
 
 **SAP BTP** o SAP Business Technology Platform (BTP) é a base de inovação da SAP na nuvem. Ele reúne ferramentas de integração, análise de dados, desenvolvimento de aplicações e automação em um único ambiente. Com o BTP, empresas podem estender soluções SAP (como o S/4HANA), conectar sistemas diversos e transformar dados em insights acionáveis com rapidez e segurança.
+
+**SLA (Service Level Agreement)** é um acordo entre fornecedor e cliente que define os serviços prestados, os níveis mínimos de qualidade (como tempo de resposta e disponibilidade) e possíveis penalidades em caso de falhas.
