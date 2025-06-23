@@ -10,7 +10,7 @@
 **SE11**: Transação usada para manipulação de modelos e banco de dados. Nela é possível criar domínios, objetos de autorização, elementos de dados, estruturas, tipos de tabelas, views e tabelas.  
 **SE16**: Consulta de dados em tabelas. Nela você pode acessar os dados contidos no banco de dados selecionando a tabela e os campos que almeja buscar apresentado em uma lista simples.  
 **SE16N**: Nela você pode acessar os dados contidos no banco de dados selecionando a tabela e os campos que almeja buscar apresentado em um ALV.  
-**ST22**: Transação utilizada para avaliação de DUMPs no ambiente SAP.
+**ST22**: Transação utilizada para avaliação de DUMPs no ambiente SAP.  
 **SE24**: Transação utilizada para a construção de classes, interfaces e métodos.  
 **/n/IWFND/MAINT_SERVICE**: Transação usada para registrar e gerenciar serviços OData no SAP Gateway. Permite ativar um serviço técnico para consumo por aplicações SAPUI5 ou Fiori.  
 **/n/UI2/SEMOBJ**: Utilizada para criar ou modificar Semantic Objects, que são usados na navegação Fiori para mapear intenções de usuários (como “exibir”, “editar”, “criar”).  
