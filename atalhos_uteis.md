@@ -6,7 +6,8 @@
 
 ### Transações 
 
-**SE09**: é usada para gerenciar Solicitações de Transporte (Requests de Transporte), também conhecidas como Ordens de Transporte.  
+**SE09**: Transação usada para gerenciar Solicitações de Transporte (Requests de Transporte), também conhecidas como Ordens de Transporte. 
+**SE11**: Transação usada para manipulação de modelos e banco de dados. Nela é possível criar domínios, objetos de autorização, elementos de dados, estruturas, tipos de tabelas, views e tabelas.  
 **ST22**: Transação utilizada para avaliação de DUMPs no ambiente SAP.
 **/n/IWFND/MAINT_SERVICE**: Transação usada para registrar e gerenciar serviços OData no SAP Gateway. Permite ativar um serviço técnico para consumo por aplicações SAPUI5 ou Fiori.  
 **/n/UI2/SEMOBJ**: Utilizada para criar ou modificar Semantic Objects, que são usados na navegação Fiori para mapear intenções de usuários (como “exibir”, “editar”, “criar”).  
