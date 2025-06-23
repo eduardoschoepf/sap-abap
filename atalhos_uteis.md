@@ -12,6 +12,7 @@
 **SE16N**: Nela você pode acessar os dados contidos no banco de dados selecionando a tabela e os campos que almeja buscar apresentado em um ALV.  
 **ST22**: Transação utilizada para avaliação de DUMPs no ambiente SAP.  
 **SE24**: Transação utilizada para a construção de classes, interfaces e métodos.  
+**SE38**: Transação utilizada para a construção de programas e includes.  
 **/n/IWFND/MAINT_SERVICE**: Transação usada para registrar e gerenciar serviços OData no SAP Gateway. Permite ativar um serviço técnico para consumo por aplicações SAPUI5 ou Fiori.  
 **/n/UI2/SEMOBJ**: Utilizada para criar ou modificar Semantic Objects, que são usados na navegação Fiori para mapear intenções de usuários (como “exibir”, “editar”, “criar”).  
 **/n/UI2/FLPD_CUST**: Abre o Launchpad Designer no modo cliente (customizing), onde você pode criar catálogos, grupos e tiles personalizados no Fiori Launchpad.  
