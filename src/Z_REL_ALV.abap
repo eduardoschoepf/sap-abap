@@ -16,5 +16,10 @@ REPORT Z_REL_ALV.
 DATA: IT_SFLIGHT TYPE TABLE OF SFLIGHT.
 
 *-- 3. Seleção de dados da tabela SFLIGHT
+SELECT *
+  FROM SFLIGHT
+  INTO TABLE IT_SFLIGHT
+  UP TO 20 ROWS.
+
 *-- 4. Criar o relatório ALV 
 *-- 5. Exibir o relatório ALV básico
