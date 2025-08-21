@@ -22,7 +22,7 @@ SELECT *
   UP TO 20 ROWS.
 
 IF SY-SUBRC <> 0 OR IT_SFLIGHT IS INITIAL.
-  MESSAGE 'Nenhum dado encontredo' TYPE 'I'.
+  MESSAGE 'Nenhum dado encontrado' TYPE 'I'.
   RETURN.
 ENDIF.
 
