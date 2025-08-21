@@ -32,3 +32,4 @@ CALL METHOD CL_SALV_TABLE=>FACTORY(
 ).
 
 *-- 5. Exibir o relatório ALV básico
+GR_TABLE->DISPLAY( ).
