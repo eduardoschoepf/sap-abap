@@ -21,5 +21,10 @@ SELECT *
   INTO TABLE IT_SFLIGHT
   UP TO 20 ROWS.
 
+IF SY-SUBRC <> 0 OR IT_SFLIGHT IS INITIAL.
+  MESSAGE 'Nenhum dado encontredo' TYPE 'I'.
+ENDIF.
+
 *-- 4. Criar o relatório ALV 
+
 *-- 5. Exibir o relatório ALV básico
