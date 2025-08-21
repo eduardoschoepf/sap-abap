@@ -23,6 +23,7 @@ SELECT *
 
 IF SY-SUBRC <> 0 OR IT_SFLIGHT IS INITIAL.
   MESSAGE 'Nenhum dado encontredo' TYPE 'I'.
+  RETURN.
 ENDIF.
 
 *-- 4. Criar o relatório ALV 
