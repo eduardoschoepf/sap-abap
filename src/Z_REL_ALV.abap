@@ -26,5 +26,9 @@ IF SY-SUBRC <> 0 OR IT_SFLIGHT IS INITIAL.
 ENDIF.
 
 *-- 4. Criar o relatório ALV 
+CALL METHOD CL_SALV_TABLE=>FACTORY( 
+  IMPORTING R_SALV_TABLE = DATA(GR_TABLE)
+  CHANGING  T_TABLE      = IT_SFLIGHT
+).
 
 *-- 5. Exibir o relatório ALV básico
