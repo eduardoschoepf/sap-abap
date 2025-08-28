@@ -36,10 +36,10 @@ TRY.
 *-- 5. Exibir o relatório ALV básico
   GR_TABLE->DISPLAY( ).
 
-  CATCH CX_SALV_MSG INTO DATA(LX_MSG).
+  CATCH CX_SALV_MSG INTO DATA(LX_MSG).    "Tratamento de exceções especificas do ALV
     MESSAGE LX_MSG->GET_TEXT( ) TYPE 'E'.
 
-  CATCH CX_ROOT INTO DATA(LX_ROOT).
+  CATCH CX_ROOT INTO DATA(LX_ROOT).       "Tratamento de outras exceções
     MESSAGE LX_ROOT->GET_TEXT( ) TYPE 'E'.
 
 ENDTRY.
