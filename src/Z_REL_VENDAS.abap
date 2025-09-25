@@ -61,7 +61,9 @@ START-OF-SELECTION.
 
         lr_alv->display( ).
 
-      CATCH CX_SALV_MSG INTO DATA(lr_msg).
-        MESSAGE lr_msg->get_text( ) TYPE 'E'.
+      CATCH CX_SALV_MSG INTO DATA(lx_msg).
+        MESSAGE lx_msg->get_text( ) TYPE 'E'.
+      CATCH CX_ROOT INTO DATA(lx_root).
+        MESSAGE lx_root->get_text( ) TYPE 'E'.
     ENDTRY.
   ENDIF.
