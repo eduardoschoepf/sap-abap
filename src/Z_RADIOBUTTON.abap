@@ -30,6 +30,15 @@ SELECTION-SCREEN END OF BLOCK b1.
 * AT SELECTION-SCREEN OUTPUT
 *---------------------------------------------------------------------*
 AT SELECTION-SCREEN OUTPUT.
+
+  "Limpa campos ao trocar de opção
+  IF r_tanum = 'X'.
+    CLEAR: p_lgtyp.
+    REFRESH s_lgpla.
+  ELSEIF r_pos = 'X'.
+    CLEAR: p_tanum.
+  ENDIF.
+
   LOOP AT SCREEN.
     CASE screen-group1.
       WHEN 'OT'.
