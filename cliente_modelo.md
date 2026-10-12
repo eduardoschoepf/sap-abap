@@ -5,7 +5,7 @@ de desenvolvimento, manutenção, debugging e análise de problemas
 em ambientes SAP ECC e S/4HANA.
 
 ---
-## 📌 TAREFA: [#NÚMERO] [PROJETO] [NOME DA TAREFA]  
+**📌 TAREFA: [#NÚMERO] [PROJETO] [NOME DA TAREFA]  
 **📅 DATA/HORA:** [DD/MM/AAAA]  
 **👤 FUNCIONAL:** [NOME DO FUNCIONAL]  
 **📩 REQUEST:** [REQUEST] | [USUÁRIO] | [DESCRIÇÃO]  
